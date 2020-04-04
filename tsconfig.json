@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "skipLibCheck": true,
+    "esModuleInterop": true,
   },
   "compileOnSave": true,
   "include": [
