@@ -4,6 +4,12 @@
   "description": "Express.jsを使ったブログサービス用のAPI",
   "main": "index.js",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "node dist/infrastructure/server.js",
+    "lint": "eslint . --ext .ts --fix",
+    "development": "NODE_ENV=development nodemon --config ./nodemon.json",
+    "tsc": ".\\node_modules\\.bin\\tsc",
+    "build": "rimraf dist && tsc -p tsconfig.json --outDir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +21,27 @@
   "bugs": {
     "url": "https://github.com/mizukenwater/express-blog-api/issues"
   },
-  "homepage": "https://github.com/mizukenwater/express-blog-api#readme"
+  "homepage": "https://github.com/mizukenwater/express-blog-api#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/typescript-estree": "^2.26.0",
+    "db-migrate": "^0.11.6",
+    "db-migrate-mysql": "^2.1.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
 }
